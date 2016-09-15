@@ -1,0 +1,48 @@
+{
+  "name": "Online-chat",
+  "version": "1.0.0",
+  "author": "Anastasiia Kozenko",
+  "devDependencies": {
+    "babel-eslint": "*",
+    "babel-loader": "*",
+    "babel-preset-es2015": "*",
+    "browser-sync": "*",
+    "eslint": "*",
+    "csscomb": "^4.0.0-alpha",
+    "gulp-base64": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-csscomb": "^3.0.2",
+    "gulp-cssnano": "*",
+    "gulp-imagemin": "*",
+    "gulp-sass": "*",
+    "gulp-scss": "^1.4.0",
+    "gulp-sourcemaps": "*",
+    "gulp-svgo": "^1.0.3",
+    "gulp-sync": "^0.1.4",
+    "imagemin-jpeg-recompress": "*",
+    "imagemin-pngquant": "*",
+    "eslint-loader": "*",
+    "gulp": "*",
+    "gulp-cache": "*",
+    "gulp-to-base64": "*",
+    "gulp-load-plugins": "*",
+    "gulp-notify": "*",
+    "gulp-plumber": "*",
+    "gulp-pug": "*",
+    "gulp-rename": "*",
+    "gulplog": "*",
+    "htmlhint-stylish": "*",
+    "json-loader": "^0.5.4",
+    "vinyl-named": "*",
+    "webpack": "*",
+    "webpack-dev-server": "*",
+    "webpack-hot-middleware": "*",
+    "webpack-stream": "*"
+  },
+  "engines": {
+    "node": "^5.0.0"
+  },
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}

@@ -1,0 +1,192 @@
+.chat {
+  position: fixed;
+  right: 25px;
+  bottom: 0;
+  z-index: $chat-z-index;
+
+  &__wrapper {
+    width: $chat-width;
+    background-color: $bg-body;
+    border-radius: $border-radius;
+    box-shadow: 0 5px 21px -4px rgba(0, 0, 0, 0.3);
+
+    &.slideInUp {
+      @extend %chat_show_aminate;
+      animation-name: slideInUp;
+    }
+
+    &.slideInDown {
+      @extend %chat_show_aminate;
+      animation-name: slideInDown;
+    }
+
+    &.hidden {
+      display: none;
+    }
+  }
+  &__header {
+    @extend %chat-header;
+  }
+  &__body {
+    padding: 15px 0;
+  }
+  &__tip {
+    @extend %chat-message--org;
+  }
+  &__dialog {
+    margin-bottom: $dialog-margin-bottom;
+    padding: 0 20px;
+    display: block;
+    overflow-y: scroll;
+    height: 200px;
+  }
+  &__form {
+    padding: 0 15px;
+  }
+  &__controls {
+    @extend %clearfix;
+    text-align: right;
+  }
+  &__message-wrapper {
+    @extend %clearfix;
+    padding: 0 10px;
+    line-height: 1;
+  }
+  &__message--user {
+    @extend %chat-message;
+    color: $color-user-message;
+    text-align: right;
+    float: right;
+    background-color: $bg-user-message;
+
+    &::before {
+      right: -10px;
+      transform: rotateX(-150deg);
+      border-color: $bg-user-message transparent transparent transparent;
+    }
+
+    .chat__message-time {
+      left: -45px;
+    }
+  }
+  &__message--org {
+    @extend %chat-message--org;
+  }
+  &__message-time {
+    @extend %absolute-vertical-align;
+    font: normal 12px/1.4 Arial, sans-serif;
+    color: $color-message-time;
+  }
+  .btn-chat {
+    @extend %chat-header;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+      background-color: lighten($bg-main, 10%);
+      outline: none;
+    }
+    &:active {
+      background-color: lighten($bg-main, 20%);
+    }
+    &.hidden {
+      display: none;
+    }
+  }
+  .btn-send {
+    font: normal 15px/35px Arial, sans-serif;
+    color: $color-main;
+    padding: 0 20px;
+    vertical-align: top;
+    text-align: center;
+
+    background-color: $bg-main;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+      background-color: lighten($bg-main, 10%);
+      outline: none;
+      box-shadow: 0 1px 2px $bg-main;
+    }
+    &:active {
+      background-color: lighten($bg-main, 20%);
+      box-shadow: inset 0 2px 2px $bg-main;
+    }
+  }
+  .btn-close {
+    @extend %absolute-vertical-align;
+    right: 15px;
+    width: 15px;
+    height: 15px;
+    background: url('icon-opt/close.svg') no-repeat center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    opacity: 0.3;
+    &:hover,
+    &:focus {
+      opacity: 0.7;
+    }
+    &:focus {
+      outline: none;
+    }
+    &:active {
+      opacity: 0.7;
+    }
+  }
+  textarea {
+    box-sizing: border-box;
+    font: normal 13px Arial, sans-serif;
+    line-height: 1.5;
+    resize: none;
+    width: 100%;
+    padding: 5px 15px;
+    color: #4b4a4a;
+
+    background-color: #fff;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    min-height: $textarea-min-height;
+    &::-webkit-input-placeholder {
+      color: $color-placeholder;
+    }
+    &::-moz-placeholder {
+      color: $color-placeholder;
+    }
+    &:-ms-input-placeholder {
+      color: $color-placeholder;
+    }
+    &.error {
+      border-color: #e57373;
+    }
+    &:focus {
+      border-color: $bg-org-message;
+      outline: none;
+    }
+  }
+  .error-message {
+    font: normal 12px Arial, sans-serif;
+    width: $chat-width - 40px;
+    height: 14px;
+    margin:  0 0 4px;
+    overflow: hidden;
+
+    text-align: left;
+    color: #f44336;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .server-error {
+    font: normal 12px/14px Arial, sans-serif;
+    float: left;
+    width: 60%;
+    margin: 0 0 4px;
+    overflow: initial;
+    white-space: normal;
+    text-overflow: initial;
+  }
+}

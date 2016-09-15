@@ -1,0 +1,21 @@
+@keyframes slideInUp {
+  from {
+    transform: translate(0, 367px);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translate(0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate(0, 367px);
+  }
+}
