@@ -52,6 +52,12 @@ const CLOSE_CHAT_ANIMATE_DELAY = 1000;
 const ENTER_CODE = 13;
 
 /**
+ * Признак запуска слушателя новых сообщений
+ * @type {Boolean}
+ */
+let needStartListener = true;
+
+/**
  * Конструктор типа 'Чат'
  */
 function Chat() {
@@ -168,8 +174,6 @@ Chat.prototype._renderChat = function() {
  * @param  {String} text     Текст сообщения
  */
 Chat.prototype.renderMessage = function(userType, text) {
-  setLoadTimeout();
-
   if(this.chat.classList.contains('hidden')) {
     this.chat.classList.remove('hidden');
     this.btnChat.classList.add('hidden');
@@ -203,6 +207,13 @@ Chat.prototype.renderMessage = function(userType, text) {
 
   // Прокрутка диалога чата к последнему сообщению
   this.dialog.scrollTop = this.dialog.scrollHeight;
+
+
+  // Запуск слушателя новых вх. сообщений
+  if(needStartListener) {
+    setLoadTimeout();
+    needStartListener = false;
+  }
 };
 
 /**

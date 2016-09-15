@@ -12,7 +12,7 @@ const SERVER_URL = 'http://localhost:8080';
  * @constant
  * @type {Number}
  */
-const CLIENT_SITE_LISTENER_DELAY = 100000;
+const CLIENT_SITE_LISTENER_DELAY = 5000;
 
 /**
  * Текст сообщения о серверной ошибке
